@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+#root{
+    background: linear-gradient(
+        
+        rgb(0, 158, 158) 10%,
+        rgb(212, 212, 212) 10%
+      );
+    height: 100vh;
+}
+
+#main-box{
+    height: 900px;
+}
+#side-bar, #chat-bar{
+    height: 880px;
+}
+#chat-list{
+    height: 700px;
+}
+#chat-box{
+    height: 740px;
+}
+#user-chatting:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.img{
+    height: 100%;
+}
+input{
+    border: 0px solid;
+}
+
+
+
+/* FONT SIZES */
+
+.font-xs{
+    font-size: 0.8rem;
+}
+
+.h-40px{
+    height: 40px;
+}
+.h-70px{
+    height: 70px;
+}
+.h-100px{
+    height: 100px;
+}

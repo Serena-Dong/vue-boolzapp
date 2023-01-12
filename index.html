@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div id="main-box" class="bg-light col-10 border my-4">
+                        <div class="container">
+                            <div class="d-flex py-2">
+                                <div id="sidebar" class="col-4 border">
+
+                                    <div id="user" class=" d-flex justify-content-between border h-70px">
+                                        <div id="user-profile" class="h-70px d-flex align-items-center">
+                                            <img src="./assets_assegnazione/img/avatar_io.jpg" alt="" class="img img-fluid rounded-circle p-2" >
+                                            <p class="mb-0">Sofia</p>
+                                        </div>
+                                        <div id="settings" class="text-secondary">
+                                            <ul class="d-flex align-items-center h-70px">
+                                                <li class="list-group-item px-2"><i class="fa-regular fa-circle "></i></li>
+                                                <li class="list-group-item px-2"><i class="fa-solid fa-message"></i></li>
+                                                <li class="list-group-item px-2 pe-3"><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="notification" class=" border bg-info h-70px">
+                                        <div id="user-profile" class="h-70px d-flex align-items-center">
+                                            <i class="fa-solid fa-bell-slash p-2 m-2 bg-white text-info rounded-pill"></i>
+                                            <div class="text font-xs">
+                                                <p class="mb-0 fw-bold">Ricevi notifiche di nuovi messaggi</p>
+                                                <p class="mb-0 "><a class="text-secondary" href="">Attiva notifiche desktop</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="search-bar" class="border h-40px d-flex align-items-center">
+                                        <i class="fa-solid fa-magnifying-glass m-3 text-secondary"></i>
+                                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 norder-0">
+                                    </div>
+
+
+                                    <div id="chat-list" class=" border  h-70px overflow-auto">
+                                        <div id="user-chatting" class=" d-flex justify-content-between border h-70px">
+                                            <div id="user-chatting-profile" class="h-70px d-flex align-items-center">
+                                                <img src="./assets_assegnazione/img/avatar_1.jpg" alt="" class="img img-fluid rounded-circle p-2">
+                                                <div class="text font-xs">
+                                                    <p class="mb-0 fw-bold">Michele</p>
+                                                    <p class="mb-0 text-secondary">Ultimo messaggio inviato</p>
+                                                </div>
+                                            </div>
+                                            <div id="time" class="text-secondary">
+                                                <p class="font-xs p-2">12:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div id="chat-bar" class="col-8 border">
+                                    <div id="user-chat" class="border h-70px"></div>
+                                    <div id="chat-box" class="border overflow-auto"></div>
+                                    <div id="text-box" class="border bg-primary h-70px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
