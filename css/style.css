@@ -26,6 +26,7 @@ body{
 }
 #chat-box{
     height: 740px;
+    background-image: url('../assets_assegnazione/img/mine.jpg');
 }
 #user-chatting:hover{
     background-color: rgb(230, 230, 230);
@@ -40,6 +41,9 @@ body{
 .bg-light-grey{
     background-color: rgb(230, 230, 230);
 }
+.bg-light-green{
+    background-color: rgb(217, 255, 171);
+}
 
 
 
@@ -53,11 +57,15 @@ body{
     height: 40px;
 }
 .h-50px{
-    height: 50px;
+    min-height: 50px;
 }
 .h-70px{
     height: 70px;
 }
 .h-100px{
     height: 100px;
+}
+
+.w-230px{
+    width: 230px;
 }
