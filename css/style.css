@@ -39,6 +39,10 @@ input{
     border: 0px solid;
 }
 
+.bg-light-grey{
+    background-color: rgb(230, 230, 230);
+}
+
 
 
 /* FONT SIZES */
