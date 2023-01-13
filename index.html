@@ -31,8 +31,8 @@
 
                                     <div id="user" class=" d-flex justify-content-between  h-70px bg-light-grey">
                                         <div id="user-profile" class="h-70px d-flex align-items-center">
-                                            <img src="./assets_assegnazione/img/avatar_io.jpg" alt="" class="img img-fluid rounded-circle p-2" >
-                                            <p class="mb-0">Sofia</p>
+                                            <img v-bind:src="'./assets_assegnazione/img/avatar' + user.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2" >
+                                            <p class="mb-0">{{user.name}}</p>
                                         </div>
                                         <div id="settings" class="text-secondary">
                                             <ul class="d-flex align-items-center h-70px">
