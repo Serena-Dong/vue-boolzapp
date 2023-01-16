@@ -19,13 +19,13 @@ body{
     height: 900px;
 }
 #side-bar, #chat-bar{
-    height: 880px;
+    height: 780px;
 }
-#chat-list{
-    height: 700px;
+#contacts-list{
+    height: 600px;
 }
-#chat-box{
-    height: 740px;
+#chat-bar #chat{
+    height: 640px;
     background-image: url('../assets_assegnazione/img/mine.jpg');
 }
 #user-chatting:hover{

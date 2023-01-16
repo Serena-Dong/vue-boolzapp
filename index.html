@@ -27,8 +27,10 @@
                 <div id="main-box" class=" col-10  my-4">
                         <div class="container">
                             <div class="d-flex py-2">
+                                <!-- SIDEBAR SECTION -->
                                 <div id="sidebar" class="col-4 bg-white">
 
+                                    <!-- User Profile -->
                                     <div id="user" class=" d-flex justify-content-between  h-70px bg-light-grey">
                                         <div id="user-profile" class="h-70px d-flex align-items-center">
                                             <img v-bind:src="'./assets_assegnazione/img/avatar' + user.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2" >
@@ -42,7 +44,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    
+                                    <!-- Notifications -->
                                     <div id="notification" class="  bg-info h-70px">
                                         <div id="user-profile" class="h-70px d-flex align-items-center">
                                             <i class="fa-solid fa-bell-slash p-2 m-2 bg-white text-info rounded-pill"></i>
@@ -52,15 +54,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+                                    <!-- Search -->
                                     <div id="search-bar" class=" h-40px d-flex align-items-center">
                                         <i class="fa-solid fa-magnifying-glass m-3 text-secondary"></i>
                                         <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 border-0">
                                     </div>
-
-
-                                    <div id="chat-list" class="   h-70px overflow-auto">
-                                        <div v-for="(contact, i) in contacts" id="user-chatting" class=" d-flex justify-content-between  h-70px">
+                                    <!-- Contacts List -->
+                                    <div id="contacts-list" class="h-70px overflow-auto">
+                                        <div v-for="(contact, i) in contacts" id="user-chatting" class=" d-flex justify-content-between  h-70px" @click="setCurrentIndex(i)">
                                             <div id="user-chatting-profile" class="h-70px d-flex align-items-center">
                                                 <img v-bind:src="'./assets_assegnazione/img/avatar' + contact.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2">
                                                 <div class="text font-xs">
@@ -69,20 +70,22 @@
                                                 </div>
                                             </div>
                                             <div id="time" class="text-secondary">
-                                                <p class="font-xs p-2">12:00</p>
+                                                <p class="font-xs p-2"></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <!-- CHAT SECTION -->
                                 <div id="chat-bar" class="col-8 ">
 
-                                    <div id="user-chat" class=" h-70px">
+                                    <!-- chat header -->
+                                    <div id="header" class=" h-70px">
                                         <div id="user-chatting" class=" d-flex justify-content-between  h-70px bg-light-grey">
                                             <div id="user-chatting-profile" class="h-70px d-flex align-items-center">
-                                                <img src="./assets_assegnazione/img/avatar_1.jpg" alt="" class="img img-fluid rounded-circle p-2">
+                                                <img v-bind:src="'./assets_assegnazione/img/avatar' + currentContact.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2">
                                                 <div class="text font-xs">
-                                                    <p class="mb-0 fw-bold">Michele</p>
+                                                    <p class="mb-0 fw-bold">{{currentContact.name}}</p>
                                                     <p class="mb-0 text-secondary">Ultimo accesso oggi alle 12:00</p>
                                                 </div>
                                             </div>
@@ -94,42 +97,52 @@
                                                     <li class="list-group-item px-2 pe-3"><i class="fa-solid fa-ellipsis-vertical"></i></li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        
+                                        </div>                                        
                                     </div>
-                                    <div id="chat-box" class=" overflow-auto">
+
+                                    <!-- chat main -->
+                                    <div id="chat" class="overflow-auto">
                                         <div class="container">
-                                            <div id="me-message" class="d-flex w-100 justify-content-end">
+
+                                            <!-- sent -->
+                                            <div id="me-message" class="d-flex w-100 justify-content-end sent">
                                                 <div class="message bg-light-green h-50px w-230px mx-5 my-3 d-flex justify-content-between rounded-3">
                                                     <div class="d-flex align-items-center">
-                                                        <p class="m-0 mx-3 font-xs m-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                                                        <p class="m-0 mx-3 font-xs m-3">
+                                                            {{currentChat.text}}
+                                                        </p>
                                                     </div>
-                                                    <div class="d-flex align-items-end"><div id="time" class="text-secondary">
+                                                    <div class="d-flex align-items-end">
+                                                        <div id="time" class="text-secondary">
                                                         <p class="font-xs m-0 p-1 ">12:00</p>
                                                     </div></div>
                                                 </div>
                                                 
                                             </div>
-                                            <div id="me-message" class="d-flex w-100 justify-content-start">
+
+                                            <!-- receveid -->
+                                            <div id="other-message" class="d-flex w-100 justify-content-start received">
                                                 <div class="message bg-white h-50px w-230px mx-5 my-3 d-flex justify-content-between rounded-3">
                                                     <div class="d-flex align-items-center">
                                                         <p class="m-0 mx-3 font-xs m-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
                                                     </div>
-                                                    <div class="d-flex align-items-end"><div id="time" class="text-secondary">
+                                                    <div class="d-flex align-items-end">
+                                                        <div id="time" class="text-secondary">
                                                         <p class="font-xs m-0 p-1 ">12:00</p>
                                                     </div></div>
                                                 </div>
                                                 
                                             </div>
-
-                                        </div>
+                                        </div> 
                                     </div>
 
-                                    <div id="text-box" class=" bg-light-grey h-70px d-flex justify-content-between align-items-center">
+                                    <!-- chat footer -->
+                                    <div id="footer" class=" bg-light-grey h-70px d-flex justify-content-between align-items-center">
                                         <i class="fa-regular fa-face-smile m-4 text-secondary"></i>
                                         <input type="text" placeholder="Scrivi un messaggio" class="w-100 h-50px p-3 border-0 rounded-3">
                                         <i class="fa-solid fa-microphone m-4 text-secondary"></i>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
