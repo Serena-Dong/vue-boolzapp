@@ -120,6 +120,14 @@ const app = Vue.createApp({
 
         this.newMessage = '';
         
+        setTimeout(() => {
+          const answer = {
+          date: this.currentDate(),
+          text: 'ok',
+          status: 'received'
+          };
+          this.currentChat.push(answer);
+        }, 1000)
       }
     }
 
