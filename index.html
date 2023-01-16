@@ -59,8 +59,8 @@
                                     </div>
                                     <!-- Search -->
                                     <div id="search-bar" class=" h-40px d-flex align-items-center">
-                                        <i class="fa-solid fa-magnifying-glass m-3 text-secondary"></i>
-                                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 border-0">
+                                        <i  class="fa-solid fa-magnifying-glass m-3 text-secondary"></i>
+                                        <input v-model.trim="searchText" type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 border-0" @keyup.enter='search'>
                                     </div>
                                     <!-- Contacts List -->
                                     <div id="contacts-list" class="h-70px overflow-auto">

@@ -5,6 +5,7 @@ const app = Vue.createApp({
         return{
            currentIndex: 0,
            newMessage: '',
+           searchText: '',
             user: {
                 name: 'Nome Utente',
                 avatar: '_io'
@@ -128,6 +129,9 @@ const app = Vue.createApp({
           };
           this.currentChat.push(answer);
         }, 1000)
+      },
+      search(){
+        if (!this.searchText) return;
       }
     }
 
