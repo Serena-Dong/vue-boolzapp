@@ -101,7 +101,8 @@ const app = Vue.createApp({
         return this.searchingContact.messages;
       },
       filteredContacts(){
-        return this.contacts.filter( contact => contact.name.includes(this.searchTerm)
+        const searchWord = this.searchTerm.toLowerCase()
+        return this.contacts.filter( contact => contact.name.toLowerCase().includes(searchWord)
         )
       },
       searchingContact(){
