@@ -80,7 +80,7 @@
     },
   ]
 
-  console.log(contacts[0].messages[0].text)
+  console.log(contacts[0].messages.text)
 
   const app = Vue.createApp({
     data(){

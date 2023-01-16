@@ -45,6 +45,24 @@ body{
     background-color: rgb(217, 255, 171);
 }
 
+.message-container{
+    display: flex;
+}
+.message-container.sent{
+    justify-content: flex-end;
+
+}
+.message-container.receveid{
+    justify-content: flex-start;
+
+}
+.message-container.sent .message{
+    background-color: rgb(217, 255, 171);
+}
+.message-container.received .message{
+    background-color: white;
+}
+
 
 
 /* FONT SIZES */

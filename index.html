@@ -102,37 +102,17 @@
 
                                     <!-- chat main -->
                                     <div id="chat" class="overflow-auto">
-                                        <div class="container">
+                                        <div  class="container">
 
-                                            <!-- sent -->
-                                            <div id="me-message" class="d-flex w-100 justify-content-end sent">
-                                                <div class="message bg-light-green h-50px w-230px mx-5 my-3 d-flex justify-content-between rounded-3">
-                                                    <div class="d-flex align-items-center">
-                                                        <p class="m-0 mx-3 font-xs m-3">
-                                                            {{currentChat.text}}
-                                                        </p>
-                                                    </div>
-                                                    <div class="d-flex align-items-end">
-                                                        <div id="time" class="text-secondary">
-                                                        <p class="font-xs m-0 p-1 ">12:00</p>
-                                                    </div></div>
+                                            <!-- message -->
+                                            <div v-for="(text, i) in currentChat" class="message-container" :class="text.status">
+                                                <div class="message rounded-3 h-50px w-230px mx-5 my-3">
+                                                    <p class="font-s m-0 px-3 pt-2">{{text.text}}</p>
+                                                    <p class="font-xs m-0 px-1 pb-1 text-end text-secondary">{{text.date}}</p>
                                                 </div>
-                                                
                                             </div>
+                            
 
-                                            <!-- receveid -->
-                                            <div id="other-message" class="d-flex w-100 justify-content-start received">
-                                                <div class="message bg-white h-50px w-230px mx-5 my-3 d-flex justify-content-between rounded-3">
-                                                    <div class="d-flex align-items-center">
-                                                        <p class="m-0 mx-3 font-xs m-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-                                                    </div>
-                                                    <div class="d-flex align-items-end">
-                                                        <div id="time" class="text-secondary">
-                                                        <p class="font-xs m-0 p-1 ">12:00</p>
-                                                    </div></div>
-                                                </div>
-                                                
-                                            </div>
                                         </div> 
                                     </div>
 
