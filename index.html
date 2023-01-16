@@ -47,6 +47,7 @@
                                             </ul>
                                         </div>
                                     </div>
+
                                     <!-- Notifications -->
                                     <div id="notification" class="  bg-info h-70px">
                                         <div id="user-profile" class="h-70px d-flex align-items-center">
@@ -57,14 +58,16 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- Search -->
                                     <div id="search-bar" class=" h-40px d-flex align-items-center">
                                         <i  class="fa-solid fa-magnifying-glass m-3 text-secondary"></i>
-                                        <input v-model.trim="searchText" type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 border-0" @keyup.enter='search'>
+                                        <input v-model.trim="searchTerm" type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 border-0" @keyup.enter='search'>
                                     </div>
+
                                     <!-- Contacts List -->
                                     <div id="contacts-list" class="h-70px overflow-auto">
-                                        <div v-for="(contact, i) in contacts" id="user-chatting" class=" d-flex justify-content-between  h-70px" @click="setCurrentIndex(i)">
+                                        <div v-for="(contact, i) in filteredContacts" id="user-chatting" class=" d-flex justify-content-between  h-70px" @click="setCurrentIndex(i)">
                                             <div id="user-chatting-profile" class="h-70px d-flex align-items-center">
                                                 <img v-bind:src="'./assets_assegnazione/img/avatar' + contact.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2">
                                                 <div class="text font-xs">
@@ -86,9 +89,9 @@
                                     <div id="header" class=" h-70px">
                                         <div id="user-chatting" class=" d-flex justify-content-between  h-70px bg-light-grey">
                                             <div id="user-chatting-profile" class="h-70px d-flex align-items-center">
-                                                <img v-bind:src="'./assets_assegnazione/img/avatar' + currentContact.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2">
+                                                <img v-bind:src="'./assets_assegnazione/img/avatar' + searchingContact.avatar + '.jpg'" alt="" class="img img-fluid rounded-circle p-2">
                                                 <div class="text font-xs">
-                                                    <p class="mb-0 fw-bold">{{currentContact.name}}</p>
+                                                    <p class="mb-0 fw-bold">{{searchingContact.name}}</p>
                                                     <p class="mb-0 text-secondary">Ultimo accesso oggi alle 12:00</p>
                                                 </div>
                                             </div>

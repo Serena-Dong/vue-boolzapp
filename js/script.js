@@ -5,7 +5,7 @@ const app = Vue.createApp({
         return{
            currentIndex: 0,
            newMessage: '',
-           searchText: '',
+           searchTerm: '',
             user: {
                 name: 'Nome Utente',
                 avatar: '_io'
@@ -98,7 +98,14 @@ const app = Vue.createApp({
         return this.contacts[this.currentIndex];
       },
       currentChat(){
-        return this.currentContact.messages;
+        return this.searchingContact.messages;
+      },
+      filteredContacts(){
+        return this.contacts.filter( contact => contact.name.includes(this.searchTerm)
+        )
+      },
+      searchingContact(){
+        return this.filteredContacts[this.currentIndex];
       }
     },
     methods:{
@@ -131,7 +138,7 @@ const app = Vue.createApp({
         }, 1000)
       },
       search(){
-        if (!this.searchText) return;
+        if (!this.searchTerm) return;
       }
     }
 
